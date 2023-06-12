@@ -1,27 +1,91 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Set body styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  background-color: #ffc840;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Navigation styles */
+nav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+nav ul li a:hover {
+  background-color: #B80063;
+  color: #fff;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  background-color: #ffc840;
+}
+
+main h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+main p {
+  margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+@layer components {
+  .navLink {
+    @apply hover:underline decoration-blue-400 text-center decoration-2 active:underline
+    underline-offset-8 rounded-full p-4 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
+  }
 }
