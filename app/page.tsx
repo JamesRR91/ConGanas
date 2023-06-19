@@ -3,8 +3,25 @@ import Image from 'next/image';
 // import {categories} from "../constants"
 // import fetchArticles from "@/lib/fetchArticles";
 import Carousel from './Carousel';
+import CategoryList from './CategoryList';
+import ContentSection from './ContentSection';
+import BlogDetails from './BlogDetails';
+import BlogPoster from './BlogPoster';
 import './globals.css'
 
+const articles = [
+	{
+	  title: 'Article 1 Title',
+	  description: 'Article 1 description',
+	  url: 'https://example.com/article-1'
+	},
+	{
+	  title: 'Article 2 Title',
+	  description: 'Article 2 description',
+	  url: 'https://example.com/article-2'
+	},
+	// Add more articles as needed
+  ];
 
 
 // interface Article {
@@ -59,6 +76,9 @@ function Home() {
 			  <div className="logo">
 			  <Image src="/ConGanas_Black_Blue.png" alt="Image 1" width={400} height={400} />
 			  </div>
+			  <CategoryList />
+			  <ContentSection selectedCategory="" />
+			  <BlogPoster />
 			  <ul className="nav-links">
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
@@ -70,6 +90,7 @@ function Home() {
 
 		  <main>
 			<section className="hero">
+				<BlogDetails articles={articles}/>
 			  <div className="hero-content">
 				<h1>Welcome to Secret Los Angeles</h1>
 				<p className='text-chrismaroon'>Discover the hidden gems of Los Angeles</p>
