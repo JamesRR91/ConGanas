@@ -6,8 +6,13 @@ import Carousel from './Carousel';
 import CategoryList from './CategoryList';
 import ContentSection from './ContentSection';
 import BlogDetails from './BlogDetails';
-import BlogPoster from './BlogPoster';
+import TipTap from './BlogPoster';
+import dynamic from 'next/dynamic';
 import './globals.css'
+
+// const MyEditor = dynamic(() => import('./BlogPoster'), {
+// 	ssr: false
+// })
 
 const articles = [
 	{
@@ -78,7 +83,6 @@ function Home() {
 			  </div>
 			  <CategoryList />
 			  <ContentSection selectedCategory="" />
-			  <BlogPoster />
 			  <ul className="nav-links">
 				<li><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
@@ -92,6 +96,7 @@ function Home() {
 			<section className="hero">
 				<BlogDetails articles={articles}/>
 			  <div className="hero-content">
+			  	<TipTap />
 				<h1>Welcome to Secret Los Angeles</h1>
 				<p className='text-chrismaroon'>Discover the hidden gems of Los Angeles</p>
 				<a href="#" className="btn-primary">Explore Now</a>

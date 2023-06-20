@@ -1,75 +1,57 @@
-import React, { useEffect } from 'react';
-import {
-  $getRoot,
-  $getSelection,
-  LexicalComposer,
-  LexicalErrorBoundary,
-} from 'lexical';
+// import { useEffect, useRef } from 'react';
+// import EditorJS from '@editorjs/editorjs';
+// import Header from '@editorjs/header';
+// import List from '@editorjs/list';
+// import './editor.css';
+// const BlogPoster = () => {
+//   const editorRef = useRef<EditorJS | null>(null);
 
-import {
-  LexicalPlainTextPlugin,
-  ContentEditable,
-  LexicalHistoryPlugin,
-  LexicalOnChangePlugin,
-  useLexicalComposerContext,
-} from '@lexical/react';
+//   useEffect(() => {
+//     let editorInstance: EditorJS | null = null;
 
-// When the editor changes, you can get notified via the
-// LexicalOnChangePlugin!
-function onChange(editorState) {
-  editorState.read(() => {
-    // Read the contents of the EditorState here.
-    const root = $getRoot();
-    const selection = $getSelection();
+//     const initializeEditor = async () => {
+//       // Initialize the Editor.js instance
+//       editorInstance = await new EditorJS({
+//         holder: 'editorjs-container',
+//         autofocus: true,
+//         tools: {
+//           header: Header,
+//           list: List,
+//           // Add more tools here if needed
+//         },
+//         // Additional configuration options
+//       });
+//     };
 
-    console.log(root, selection);
-  });
-}
+//     initializeEditor();
 
-// Catch any errors that occur during Lexical updates and log them
-// or throw them as needed. If you don't throw them, Lexical will
-// try to recover gracefully without losing user data.
-function onError(error) {
-  console.error(error);
-}
+//     return () => {
+//       // Destroy the Editor.js instance when the component unmounts
+//       if (editorInstance) {
+//         editorInstance.destroy();
+//       }
+//     };
+//   }, []);
 
-function MyCustomAutoFocusPlugin() {
-  const [editor] = useLexicalComposerContext();
+//   return <div id="editorjs-container" />;
+// };
 
-  useEffect(() => {
-    // Focus the editor when the effect fires!
-    editor.focus();
-  }, [editor]);
+// export default BlogPoster;
 
-  return null;
-}
+import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 
-function Editor() {
-  const initialConfig = {
-    namespace: 'MyEditor',
-    onError,
-  };
+const Tiptap = () => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+    ],
+    content: '<p>Hello World! 🌎️</p>',
+  })
 
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <LexicalPlainTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>Enter some text...</div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-      <LexicalOnChangePlugin onChange={onChange} />
-      <LexicalHistoryPlugin />
-      <MyCustomAutoFocusPlugin />
-    </LexicalComposer>
-  );
+    <EditorContent editor={editor} className='bg-white, text-black'/>
+  )
 }
 
-export default function EditorPage() {
-  return (
-    <div>
-      <h1>Editor Page</h1>
-      <Editor />
-      {/* Other components or content */}
-    </div>
-  );
-}
+export default Tiptap

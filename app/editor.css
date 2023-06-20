@@ -1,0 +1,4 @@
+/* editor.css */
+#editorjs-container {
+    @apply bg-transparent;
+  }
