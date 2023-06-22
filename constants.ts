@@ -1,4 +1,5 @@
 export const categories: Category[]= [
+    "latest",
     "lifestyle",
     "business",
     "movies",

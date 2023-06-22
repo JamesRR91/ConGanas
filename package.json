@@ -39,6 +39,7 @@
     "typescript": "5.1.3"
   },
   "devDependencies": {
-    "@types/editorjs__header": "^2.6.0"
+    "@types/editorjs__header": "^2.6.0",
+    "nodemon": "^2.0.22"
   }
 }

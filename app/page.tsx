@@ -7,6 +7,8 @@ import CategoryList from './CategoryList';
 import ContentSection from './ContentSection';
 import BlogDetails from './BlogDetails';
 import TipTap from './BlogPoster';
+import NavLinks from './NavLinks';
+import Search from './Search';
 import dynamic from 'next/dynamic';
 import './globals.css'
 
@@ -82,6 +84,8 @@ function Home() {
 			  <Image src="/ConGanas_Black_Blue.png" alt="Image 1" width={400} height={400} />
 			  </div>
 			  <CategoryList />
+			  <NavLinks />
+			  <Search />
 			  <ContentSection selectedCategory="" />
 			  <ul className="nav-links">
 				<li><a href="#">Home</a></li>
