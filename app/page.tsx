@@ -80,9 +80,6 @@ function Home() {
 	return (
 		<div>
 			<nav>
-			  <div className="logo">
-			  <Image src="/ConGanas_Black_Blue.png" alt="Image 1" width={400} height={400} />
-			  </div>
 			  <CategoryList />
 			  <NavLinks />
 			  <Search />
