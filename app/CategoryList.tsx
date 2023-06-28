@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import NavLinks from './NavLinks';
 const CategoryList = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -19,6 +19,8 @@ const CategoryList = () => {
         {/* Add more category items as needed */}
       </ul>
       <p>Selected category: {selectedCategory}</p>
+
+      {selectedCategory === 'Blog' && <NavLinks />}
     </div>
   );
 };

@@ -81,7 +81,7 @@ function Home() {
 		<div>
 			<nav>
 			  <CategoryList />
-			  <NavLinks />
+			  {/* <NavLinks /> */}
 			  <Search />
 			  <ContentSection selectedCategory="" />
 			  <ul className="nav-links">
