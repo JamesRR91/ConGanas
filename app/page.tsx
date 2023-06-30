@@ -80,9 +80,9 @@ function Home() {
 	return (
 		<div>
 			<nav>
+			  <Search />
 			  <CategoryList />
 			  {/* <NavLinks /> */}
-			  <Search />
 			  <ContentSection selectedCategory="" />
 			  <ul className="nav-links">
 				<li><a href="#">Home</a></li>
