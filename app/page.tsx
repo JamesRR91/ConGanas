@@ -9,6 +9,7 @@ import BlogDetails from './BlogDetails';
 import TipTap from './BlogPoster';
 import NavLinks from './NavLinks';
 import Search from './Search';
+import SearchResults from './SearchResults';
 import dynamic from 'next/dynamic';
 import './globals.css'
 
@@ -102,6 +103,10 @@ function Home() {
 				<p className='text-chrismaroon'>Discover the hidden gems of Los Angeles</p>
 				<a href="#" className="btn-primary">Explore Now</a>
 			  </div>
+			</section>
+
+			<section>
+				<SearchResults articles={articles} />
 			</section>
 
 			<section className="featured-section">
