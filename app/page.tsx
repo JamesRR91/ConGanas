@@ -9,7 +9,7 @@ import BlogDetails from './BlogDetails';
 import TipTap from './BlogPoster';
 import NavLinks from './NavLinks';
 import Search from './Search';
-import SearchResults from './SearchResults';
+// import SearchResults from './SearchResults';
 import dynamic from 'next/dynamic';
 import './globals.css'
 
@@ -105,9 +105,9 @@ function Home() {
 			  </div>
 			</section>
 
-			<section>
+			{/* <section>
 				<SearchResults articles={articles} />
-			</section>
+			</section> */}
 
 			<section className="featured-section">
 			  <div className="container">
